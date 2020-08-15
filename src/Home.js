@@ -128,19 +128,16 @@ class Home extends Component {
   handleSubmit(e){
     e.preventDefault();
     console.log(this.state.courses);
-    fetch('/api/calculate', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(this.state.courses)
-    })
-    .then(res => res.json())
-    .then(data => {
-      this.setState({
-        gp: data.gp
-      });
+    let totalPoints = this.state.courses.reduce( (prev, curr) => {
+      return prev + (Number(curr.units) * Number(curr.points)); 
+    }, 0);
+    let units = this.state.courses.reduce( (prev, curr) => {
+      return prev + Number(curr.units); 
+    }, 0);
+    let result = (totalPoints / units);
+
+    this.setState({
+      gp: result
     })
   }
   handleChange(i, e) {

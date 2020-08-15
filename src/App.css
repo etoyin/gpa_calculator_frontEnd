@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+html, body {
+  min-height: 100%;
+}
+body, div, form, input, select, p { 
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  color: #eee;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2 {
+  text-transform: uppercase;
+  font-weight: 400;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  margin: 0 0 0 8px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-block {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  padding: 100px 25px 100px 25px;
+  background: rgba(200, 0, 0, 0.5); 
+  min-height: 100%
+}
+.left-part, form {
+  padding: 25px;
+}
+.left-part {
+  text-align: center;
+}
+.fa-graduation-cap {
+  font-size: 72px;
+}
+form {
+  background: rgba(0, 0, 0, 0.7); 
+}
+.title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+input {
+  width: 70%;
+  padding: 5px;
+  margin-bottom: 30px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #eee;
+}
+input::placeholder {
+  color: #eee;
+}
+button {
+  padding: 10px 5px;
+  margin-top: 20px;
+  border-radius: 5px; 
+  border: none;
+  background: #26a9e0; 
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  width: 100%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn10{
+  width: 10% !important
+}
+button:hover {
+  background: #85d6de;
+}
+@media (min-width: 568px) {
+  html, body {
+    height: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .main-block {
+    flex-direction: row;
+    height: calc(100% - 50px);
+  }
+  .left-part, form {
+    flex: 1;
+    height: auto;
   }
 }
